@@ -22,7 +22,12 @@ def get_user(user_id: int):
         if user["id"] == user_id:
             return user
     
-
+app.get("/users/address/{address}")
+def by_address(address: str):
+    result = [user for user in users if user["address"].lower() == address.lower()]
+    if result:
+        return result
+    
 
 
 if __name__ == '__main__':
