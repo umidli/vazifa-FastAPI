@@ -28,6 +28,12 @@ def by_address(address: str):
     if result:
         return result
     
+@app.post("/users")
+def add_user(user: dict):
+    users.append(user)
+    return {"message": "user muvafaqiyatli tarzda qo'shildi", "user": user}
+
+    
 
 
 if __name__ == '__main__':
